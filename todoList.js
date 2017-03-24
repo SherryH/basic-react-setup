@@ -1,13 +1,15 @@
-const dummyTodos = [
-  {id: 0, isDone: true, text: 'cook dinner'},
-  {id: 1, isDone: false, text: 'laundry'}
-];
+import {List, Map} from 'immutable';
+
+const dummyTodos = List([
+  Map({id: 0, isDone: true, text: 'cook dinner'}),
+  Map({id: 1, isDone: false, text: 'laundry'})
+]);
 
 const Todo = ({todo}) =>{
   if (todo.isDone) {
-    return <strike>{todo.text}</strike>;
+    return <strike>{todo.get('text')}</strike>;
   } else {
-    return <span>{todo.text}</span>;
+    return <span>{todo.get('text')}</span>;
   }
 }
 
@@ -18,7 +20,7 @@ const TodoList = ({todos}) =>{
       <input type='text' placeholder='Add todo' />
       <ul>
         {todos.map((todo) => (
-          <li><Todo todo={todo} /></li>
+          <li key={todo.get('id').toString()}><Todo todo={todo} /></li>
         ))}
       </ul>
     </div>
