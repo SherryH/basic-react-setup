@@ -42,3 +42,4 @@ var App3 = function({surprise}){
 ReactDOM.render(<App1 functype="ReAct" />, document.getElementById("app"));
 ReactDOM.render(<App2 test="Tech assessment" />, document.getElementById("app2"));
 ReactDOM.render(<App3 surprise="I got the Babel transpilation working! by removing the type=text/babel... from the script tag in index.html" />, document.getElementById("app3"));
+ReactDOM.render(<Game />, document.getElementById("game"));
