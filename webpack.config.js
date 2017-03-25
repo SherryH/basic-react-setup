@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './todoList.js',
+  entry: './src/todoListApp.js',
   output: {
     path: path.join(__dirname, '/compiled/'),
     filename: 'bundle.js'
