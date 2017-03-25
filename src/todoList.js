@@ -1,12 +1,13 @@
 import {List, Map} from 'immutable';
 
 
-
+//because  .toJS() is called when passing the todo store to <Todo/> props
+// the todo here is a plain JS object
 const Todo = ({todo}) =>{
-  if (todo.get('isDone')) {
-    return <strike>{todo.get('text')}</strike>;
+  if (todo.isDone) {
+    return <strike>{todo.text}</strike>;
   } else {
-    return <span>{todo.get('text')}</span>;
+    return <span>{todo.text}</span>;
   }
 }
 
@@ -32,7 +33,7 @@ const TodoList = ({todos, addTodo, toggleTodo}) =>{
       <input type='text' placeholder='Add todo' onKeyDown={onSubmit}/>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.get('uid')} onClick={e => onToggle(todo.get('uid'))}><Todo todo={todo} /></li>
+          <li key={todo.get('uid')} onClick={e => onToggle(todo.get('uid'))}><Todo todo={todo.toJS()} /></li>
         ))}
       </ul>
     </div>
