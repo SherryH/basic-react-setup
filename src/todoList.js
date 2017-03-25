@@ -1,4 +1,6 @@
+import React from 'react';
 import {List, Map} from 'immutable';
+
 
 
 //because  .toJS() is called when passing the todo store to <Todo/> props

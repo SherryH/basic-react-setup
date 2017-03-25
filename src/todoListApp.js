@@ -1,3 +1,5 @@
+import React from 'react';
+import {render} from 'react-dom';
 import {List, Map} from 'immutable';
 import TodoListContainer from './todoListContainer';
 import reducer from './reducers';
@@ -15,7 +17,7 @@ const dummyTodos = List([
 // then create store
 const store = createStore(reducer);
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <TodoListContainer />
   </Provider>,
